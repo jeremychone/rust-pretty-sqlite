@@ -1,0 +1,30 @@
+[package]
+name = "pretty-sqlite"
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.77"
+license = "MIT OR Apache-2.0"
+description = "Simple, Minimalistic Pretty Prints for SQLite using rusqlite"
+categories = ["development-tools::testing"]
+keywords = [
+	"sqlite",
+  "pretty-print",
+	"database",
+  "rusqlite"
+]
+homepage = "https://github.com/jeremychone/rust-pretty-sqlite"
+repository = "https://github.com/jeremychone/rust-pretty-sqlite"
+
+
+[lints.rust]
+unsafe_code = "forbid"
+# unused = "allow" # For exploratory dev.
+
+[dependencies]
+rusqlite = { version = "0.31" }
+tabled = { version = "0.15" }
+# -- Others
+derive_more = {version = "1.0.0-beta", features = ["from"] }
+
+[dev-dependencies]
+rusqlite = { version = "0.31", features = ["bundled"] }
