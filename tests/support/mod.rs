@@ -44,7 +44,12 @@ impl<T> XVec<T> for Vec<T> {
 		if idx >= 0 {
 			self.get(idx as usize)
 		} else {
-			self.get((self.len() as isize + idx) as usize)
+			let adjusted_index = self.len() as isize + idx;
+			if adjusted_index >= 0 {
+				self.get(adjusted_index as usize)
+			} else {
+				None
+			}
 		}
 	}
 }
