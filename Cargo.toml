@@ -21,10 +21,10 @@ unsafe_code = "forbid"
 # unused = "allow" # For exploratory dev.
 
 [dependencies]
-rusqlite = { version = "0.32" }
+rusqlite = { version = "0.33" }
 tabled = { version = "0.15" }
 # -- Others
 derive_more = {version = "1.0.0", features = ["from"] }
 
 [dev-dependencies]
-rusqlite = { version = "0.32", features = ["bundled"] }
+rusqlite = { version = "0.33", features = ["bundled"] }
