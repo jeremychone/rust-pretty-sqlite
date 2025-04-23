@@ -7,8 +7,7 @@ use std::sync::OnceLock;
 use tabled::settings::Style;
 
 /// Default PRETTY OPTIONS
-/// Note: Not sure if there are performance benefits to putting this in a OnceLock,
-///       but it should not hurt either way.
+/// Note: Given the simplicy of the current PrettyOptions, this is probably not needed.
 static DEFAULT_PRETTY_OPTIONS: OnceLock<PrettyOptions> = OnceLock::new();
 
 pub fn print_table(conn: &Connection, table: &str) -> Result<()> {
@@ -60,6 +59,13 @@ pub fn pretty_select_with_options(
 	let rows = stmt.query(params)?;
 
 	pretty_rows(rows, options)
+}
+
+pub fn print_rows(rows: Rows<'_>) -> Result<()> {
+	let pretty_options = DEFAULT_PRETTY_OPTIONS.get_or_init(PrettyOptions::default);
+	let rows_content = pretty_rows(rows, pretty_options)?;
+	println!("{rows_content}");
+	Ok(())
 }
 
 fn pretty_rows(mut rows: Rows<'_>, options: &PrettyOptions) -> Result<String> {
