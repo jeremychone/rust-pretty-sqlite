@@ -1,6 +1,6 @@
 [package]
 name = "pretty-sqlite"
-version = "0.1.1-WIP"
+version = "0.2.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Simple, Minimalistic Pretty Prints for SQLite using rusqlite (for test & dev)"
@@ -20,10 +20,10 @@ unsafe_code = "forbid"
 # unused = "allow" # For exploratory dev.
 
 [dependencies]
-rusqlite = { version = "0.35" }
+rusqlite = { version = "0.36" }
 tabled = { version = "0.18" }
 # -- Others
 derive_more = {version = "2", features = ["from", "display"] }
 
 [dev-dependencies]
-rusqlite = { version = "0.35", features = ["bundled"] }
+rusqlite = { version = "0.36", features = ["bundled"] }
