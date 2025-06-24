@@ -1,6 +1,6 @@
 [package]
 name = "pretty-sqlite"
-version = "0.2.0"
+version = "0.2.1-WIP"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 description = "Simple, Minimalistic Pretty Prints for SQLite using rusqlite (for test & dev)"
