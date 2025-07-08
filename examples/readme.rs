@@ -1,4 +1,4 @@
-use rusqlite::{params, Connection};
+use rusqlite::{Connection, params};
 
 pub type Result<T> = core::result::Result<T, Error>;
 pub type Error = Box<dyn std::error::Error>; // For early dev.
@@ -46,9 +46,9 @@ pub fn seed_test_data(con: &Connection) -> Result<()> {
 
 	for i in 1..=5 {
 		// start at 1 to match sqlite id
-		let name = format!("Person {}", i);
+		let name = format!("Person {i}");
 		let yob = 1950 + (i % 50);
-		let data_t = format!("Data {}", i);
+		let data_t = format!("Data {i}");
 		let data_b = vec![0u8; 10]; // Example binary data
 
 		stmt.execute(params![name, yob, data_t, data_b])?;

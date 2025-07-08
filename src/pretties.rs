@@ -143,7 +143,7 @@ fn truncate_string(s: String, options: &PrettyOptions) -> String {
 			.iter()
 			.map(|&(_, c)| c)
 			.collect::<String>();
-		format!("{}...{}", first_part, second_part)
+		format!("{first_part}...{second_part}")
 	} else {
 		s.to_string()
 	}
