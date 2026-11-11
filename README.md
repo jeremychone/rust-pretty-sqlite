@@ -1,5 +1,7 @@
 # `pretty-sqlite` - Simple, Minimalistic Pretty Printing for SQLite
 
+**IMPORTANT** See [Cargo.toml](Cargo.toml) to see which version of `rusqlite` should be used with this crate.
+
 This library helps with testing and exploratory development of SQLite by conveniently printing the contents of a table or a select statement into a nicely formatted table using the [tabled](https://crates.io/crates/tabled) crate.
 
 This library is based on the [rusqlite](https://crates.io/crates/rusqlite) crate.

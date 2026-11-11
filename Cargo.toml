@@ -1,6 +1,6 @@
 [package]
 name = "pretty-sqlite"
-version = "0.7.1"
+version = "0.8.0"
 publish = false # WIP. Comment/Delete for release.
 edition = "2024"
 license = "MIT OR Apache-2.0"
@@ -21,10 +21,10 @@ unsafe_code = "forbid"
 # unused = "allow" # For exploratory dev.
 
 [dependencies]
-rusqlite = { version = "0.41" }
+rusqlite = { version = "0.42" }
 tabled = { version = "0.22" }
 # -- Others
 derive_more = {version = "2.1", features = ["from", "display"] }
 
 [dev-dependencies]
-rusqlite = { version = "0.41", features = ["bundled"] }
+rusqlite = { version = "0.42", features = ["bundled"] }
